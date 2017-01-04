@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import socketIO_client
 import sys, socket, urllib2
 

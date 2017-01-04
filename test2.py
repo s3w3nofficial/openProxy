@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 import socketIO_client
 
 class WikiNamespace(socketIO_client.BaseNamespace):
