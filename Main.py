@@ -19,6 +19,9 @@ def doCheck(ip):
 		return False
 	return True
 
+def isProxy(ip):
+	print ip + " is probably an open proxy. "
+
 class WikiNamespace(socketIO_client.BaseNamespace):
 	def on_change(self, change):
 		ip = True
@@ -29,10 +32,10 @@ class WikiNamespace(socketIO_client.BaseNamespace):
 				ip = False
 				break
 		if ip:
-				print change['user']
+				print "Testing" + change['user']
 				for i in range(20): 
 					if doCheck(change['user'] + ':80'):
-						print change['user'] + "after testing"
+						isProxy(change['user'])
 						break
 
 	def on_connect(self):
