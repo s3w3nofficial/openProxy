@@ -33,10 +33,11 @@ class WikiNamespace(socketIO_client.BaseNamespace):
 				break
 		if ip:
 				print "Testing" + change['user']
-				for i in range(20): 
-					if doCheck(change['user'] + ':80'):
-						isProxy(change['user'])
-						break
+#				for i in range(20): 
+				if doCheck(change['user'] + ':80'):
+					isProxy(change['user'])
+				elif doCheck(change['user'] + ':8080'):
+					isProxy(change['user'])
 
 	def on_connect(self):
 		self.emit('subscribe', 'cs.wikipedia.org')
